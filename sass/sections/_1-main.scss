@@ -1,0 +1,44 @@
+.main {
+    height: 100vh;
+    position: relative;
+    top: 0;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        margin: 60px;
+        width: 148px;
+        height: 35px;
+        background-image: url(../images/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__menuBtn {
+        @include unbuttonize;
+        margin: 60px;
+        color: $color-mid-light-blue;
+        font-family: "RecoletaAltBold", serif;
+        font-size: 30px;
+        line-height: 26px;
+        cursor: pointer;
+    }
+
+    &__animationContainer {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    &__cat {
+        display: block;
+        width: 482px;
+        height: 467px;
+        background-image: url(../images/main-cat.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

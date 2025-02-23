@@ -1,0 +1,26 @@
+.skills {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+
+    &__mainText,
+    &__secondaryText { 
+        @include primaryText;
+        max-width: 784px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__mainText {
+        color: $color-dark-blue;
+
+        &--2 {
+            margin-bottom: 40px;
+        }
+    }
+    &__secondaryText { 
+        color: $color-light-blue;
+    }
+}

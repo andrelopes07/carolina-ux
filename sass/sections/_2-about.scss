@@ -1,0 +1,47 @@
+.about {
+    font-family: "RecoletaAltMedium", serif;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 784px;
+    }
+
+    &__tabs {
+        font-size: 16px;
+        line-height: 26px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        margin:0 48px 40px;
+    }
+
+    &__link {
+        @include unbuttonize;
+        text-decoration: none;
+        color: $color-tabs;
+        transition: color .2s ease-in;
+        
+        &:hover {
+            color: $color-dark-blue;
+        }
+
+        &--active {
+            text-decoration: none;
+            color: $color-dark-blue;
+        }
+    }
+
+    &__content {
+        text-align: center;
+        font-size: 24px;
+        line-height: 40px;
+        color: $color-dark-blue;
+    }
+}

@@ -1,0 +1,81 @@
+.projects {
+    height: 100vh;
+    background-color: $color-light-blue;
+
+    &__title {
+        @include primaryText;
+        font-weight: 500;
+        padding: 56px 0;
+        color: $color-dark-blue;
+        text-align: center;
+    }
+
+    &__grid {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        column-gap: 60px;
+        row-gap: 60px;
+    }
+
+    &__card {
+        border-radius: 12px;
+        background-size: cover;
+        list-style: none;
+        width: 606px;
+        height: 340px;
+        
+
+        &--1 {
+            background-image: url(../images/project-1.png);
+        }
+        &--2 {
+            background-image: url(../images/project-2.png);
+        }
+        &--3 {
+            background-image: url(../images/project-3.png);
+        }
+        &--4 {
+            background-image: url(../images/project-4.png);
+        }
+    }
+
+    &__info {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background-color: rgba(0, 0, 0, .8);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: 100;
+        }
+    }
+
+    &__name {
+        color: $color-gray;
+        font-family: "RecoletaAltMedium", serif;
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 28px;
+    }
+
+    &__description {
+        color: $color-white;
+        font-family: "RecoletaAlt", serif;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    &__link {
+        color: $color-white;
+        font-family: "RecoletaAltBold", serif;
+        font-size: 20px;
+        line-height: 22px;
+    }
+}
