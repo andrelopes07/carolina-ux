@@ -1,6 +1,10 @@
+.outer-main {
+    height: 185vh;
+}
+
 .main {
     height: 100vh;
-    position: relative;
+    position: sticky;
     top: 0;
 
     &__header {
@@ -9,36 +13,74 @@
     }
 
     &__logo {
-        margin: 60px;
-        width: 148px;
-        height: 35px;
+        margin: 30px 16px;
+        width: 100px;
+        height: 24px;
         background-image: url(../images/logo.png);
         background-size: contain;
         background-repeat: no-repeat;
+
+        @media (min-width: 768px) {
+            margin: 60px;
+            width: 148px;
+            height: 35px;
+        }
     }
 
+    &__hamburgerBtn {
+        margin: 24px 16px;
+        width: 32px;
+        height: 32px;
+        background-image: url(../images/hamburger.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+    
     &__menuBtn {
-        @include unbuttonize;
-        margin: 60px;
-        color: $color-mid-light-blue;
-        font-family: "RecoletaAltBold", serif;
-        font-size: 30px;
-        line-height: 26px;
-        cursor: pointer;
+        display: none;
+
+        @media (min-width: 768px) {
+            display: block;
+            @include unbuttonize;
+            color: $color-mid-light-blue;
+            font-family: "RecoletaAltBold", serif;
+            font-size: 30px;
+            line-height: 26px;
+            cursor: pointer;
+            margin: 60px;
+        }
     }
 
     &__animationContainer {
         margin: 0 auto;
+        padding-top: 70px;
         width: fit-content;
+
+        @media (min-width: 768px) { 
+            padding-top: unset;
+        }
     }
 
     &__cat {
         display: block;
-        width: 482px;
+        width: 320px;
         height: 467px;
-        background-image: url(../images/main-cat.png);
-        background-size: cover;
+        background-image: url(../images/0.png);
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+
+        @media (min-width: 768px) { 
+            width: 466px;
+            height: 864px;
+        }
+    }
+
+    &__toggleDarkMode {
+        display: none;
     }
 }

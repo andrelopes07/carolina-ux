@@ -1,32 +1,69 @@
 .about {
     font-family: "RecoletaAltMedium", serif;
     position: relative;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    align-content: center;
 
-    &__wrapper {
+    &__wrapper { 
+        position: relative;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         max-width: 784px;
     }
 
     &__tabs {
+        height: 26px;
         font-size: 16px;
         line-height: 26px;
         list-style: none;
         display: flex;
-        justify-content: space-between;
-        margin:0 48px 40px;
+        margin:0 0 16px;
+        overflow:scroll;
+        scrollbar-width: none;
+
+        @media (min-width: 768px) {
+            margin:0 auto 16px;
+        }
+
+        & li {
+            &:nth-child(2) {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    &__faded {
+        position: absolute;
+        height: 26px;
+        width: 20px;
+
+        &--start {
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to left, rgba($color-light-blue, .4), rgba($color-light-blue, 1));
+        }
+
+        &--end {
+            top: 0;
+            right: 0;
+            background-image: linear-gradient(to right, rgba($color-light-blue, .4), rgba($color-light-blue, 1));
+        }
+
+        @media (min-width: 768px) {
+            display: none;
+        }
     }
 
     &__link {
         @include unbuttonize;
         text-decoration: none;
+        white-space: nowrap;
         color: $color-tabs;
+        margin-right: 26px;
         transition: color .2s ease-in;
+        cursor: pointer;
         
         &:hover {
             color: $color-dark-blue;
@@ -39,9 +76,15 @@
     }
 
     &__content {
+        margin: 0 20px;
         text-align: center;
-        font-size: 24px;
-        line-height: 40px;
+        font-size: 20px;
+        line-height: 32px;
         color: $color-dark-blue;
+
+        @media (min-width: 768px) {
+            font-size: 24px;
+            line-height: 40px;
+        }
     }
 }

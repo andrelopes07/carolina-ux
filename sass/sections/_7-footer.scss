@@ -15,9 +15,17 @@
 
     &__copyright {
         font-size: 14px;
+
+        @media (min-width: 768px) {
+            font-size: 16px;
+        }
     }
 
     &__disclaimer {
         font-size: 10px;
+
+        @media (min-width: 768px) {
+            font-size: 12px;
+        }
     }
 }

@@ -1,29 +1,55 @@
 .projects {
-    height: 100vh;
-    background-color: $color-light-blue;
+    min-height: 100vh;
+    padding: 48px 16px;
+
+    @media (min-width: 1024px) {
+        padding: 56px;
+    }
 
     &__title {
-        @include primaryText;
+        @include primaryTextBp1;
         font-weight: 500;
-        padding: 56px 0;
+        padding-bottom: 48px;
         color: $color-dark-blue;
         text-align: center;
+
+        @media (min-width: 768px) {
+            @include primaryText;
+            padding-bottom: 56px;
+        }
     }
 
     &__grid {
         display: flex;
         flex-flow: wrap;
         justify-content: center;
-        column-gap: 60px;
-        row-gap: 60px;
+        column-gap: 32px;
+        row-gap: 32px;
+
+        @media (min-width: 1024px) {
+            row-gap: 64px;
+        }
     }
 
     &__card {
         border-radius: 12px;
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: cover;
         list-style: none;
-        width: 606px;
-        height: 340px;
+        width: 343px;
+        height: 240px;
+        
+
+        @media (min-width: 768px) {
+            width: 336px;
+            height: 264px;
+        }
+
+        @media (min-width: 1024px) {
+            width: 606px;
+            height: 474px;
+        }
         
 
         &--1 {

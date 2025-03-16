@@ -7,62 +7,67 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" type="img/png" href="./images/favicon.png">
 
-    <link rel="preload" as="image" href="./images/illustration-0.png">
-    <link rel="preload" as="image" href="./images/illustration-1.png">
-    <link rel="preload" as="image" href="./images/illustration-2.png">
-    <link rel="preload" as="image" href="./images/illustration-3.png">
-    <link rel="preload" as="image" href="./images/illustration-4.png">
-    <link rel="preload" as="image" href="./images/illustration-5.png">
-    <link rel="preload" as="image" href="./images/illustration-6.png">
-    <link rel="preload" as="image" href="./images/illustration-7.png">
-    <link rel="preload" as="image" href="./images/illustration-8.png">
-    <link rel="preload" as="image" href="./images/illustration-9.png">
-    <link rel="preload" as="image" href="./images/illustration-10.png">
-    <link rel="preload" as="image" href="./images/illustration-11.png">
-    <link rel="preload" as="image" href="./images/illustration-12.png">
-    <link rel="preload" as="image" href="./images/illustration-13.png">
-    <link rel="preload" as="image" href="./images/illustration-14.png">
-    <link rel="preload" as="image" href="./images/illustration-15.png">
-    <link rel="preload" as="image" href="./images/illustration-16.png">
-    <link rel="preload" as="image" href="./images/illustration-17.png">
-    <link rel="preload" as="image" href="./images/illustration-18.png">
-    <link rel="preload" as="image" href="./images/illustration-19.png">
-    <link rel="preload" as="image" href="./images/illustration-20.png">
-    <link rel="preload" as="image" href="./images/illustration-21.png">
-    <link rel="preload" as="image" href="./images/illustration-22.png">
-    <link rel="preload" as="image" href="./images/illustration-23.png">
-    <link rel="preload" as="image" href="./images/illustration-24.png">
-    <link rel="preload" as="image" href="./images/illustration-25.png">
-    <link rel="preload" as="image" href="./images/illustration-26.png">
-    <link rel="preload" as="image" href="./images/illustration-27.png">
-    <link rel="preload" as="image" href="./images/illustration-28.png">
+    <link rel="preload" as="image" href="./images/0.png">
+    <link rel="preload" as="image" href="./images/1.png">
+    <link rel="preload" as="image" href="./images/2.png">
+    <link rel="preload" as="image" href="./images/3.png">
+    <link rel="preload" as="image" href="./images/4.png">
+    <link rel="preload" as="image" href="./images/5.png">
+    <link rel="preload" as="image" href="./images/6.png">
+    <link rel="preload" as="image" href="./images/7.png">
+    <link rel="preload" as="image" href="./images/8.png">
+    <link rel="preload" as="image" href="./images/9.png">
+    <link rel="preload" as="image" href="./images/10.png">
+    <link rel="preload" as="image" href="./images/11.png">
+    <link rel="preload" as="image" href="./images/12.png">
+    <link rel="preload" as="image" href="./images/13.png">
+    <link rel="preload" as="image" href="./images/14.png">
+    <link rel="preload" as="image" href="./images/15.png">
+    <link rel="preload" as="image" href="./images/16.png">
+    <link rel="preload" as="image" href="./images/17.png">
+    <link rel="preload" as="image" href="./images/18.png">
+    <link rel="preload" as="image" href="./images/19.png">
+    <link rel="preload" as="image" href="./images/20.png">
+    <link rel="preload" as="image" href="./images/21.png">
+    <link rel="preload" as="image" href="./images/22.png">
+    <link rel="preload" as="image" href="./images/23.png">
+    <link rel="preload" as="image" href="./images/24.png">
+    <link rel="preload" as="image" href="./images/25.png">
+    <link rel="preload" as="image" href="./images/26.png">
+    <link rel="preload" as="image" href="./images/27.png">
+    <link rel="preload" as="image" href="./images/28.png">
     
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
 </head>
 <body>
-    <main class="main">
-        <header class="main__header">
-            <i class="main__logo"></i>
-            <button class="main__menuBtn">Menu</button>
-        </header>
-        
-        <div class="main__animationContainer">
-            <i class="main__cat"></i>
+    <header class="outer-main">
+        <div class="main">
+            <div class="main__header">
+                <i class="main__logo"></i>
+                <i class="main__hamburgerBtn" onclick="openMenu()"></i>
+                <button class="main__menuBtn" onclick="openMenu()">Menu</button>
+            </div>
+            
+            <div class="main__animationContainer">
+                <i class="main__cat"></i>
+            </div>
+    
+            <div class="main__toggleDarkMode">
+                <button></button>
+            </div>
         </div>
+    </header>
 
-        <div class="main__toggleDarkMode">
-            <button></button>
-        </div>
-    </main>
-
-    <section class="about">
+    <section class="about" id="about">
         <div class="about__wrapper">
             <ul class="about__tabs">
+                <li class="about__faded about__faded--start"></li>
                 <li><button class="about__link about__link--active" onclick="selectTab(0)">For anyone</button></li>
                 <li><button class="about__link" onclick="selectTab(1)">Recruiters</button></li>
                 <li><button class="about__link" onclick="selectTab(2)">Digital Product Designers</button></li>
                 <li><button class="about__link" onclick="selectTab(3)">Product Managers</button></li>
                 <li><button class="about__link" onclick="selectTab(4)">Engineers</button></li>
+                <li class="about__faded about__faded--end"></li>
             </ul>
 
             <p class="about__content">
@@ -71,14 +76,16 @@
         </div>
     </section>
 
-    <section class="skills">
-        <p class="skills__mainText skills__mainText--1">I’m always eager to grow—whether by exploring new techniques, taking courses, or staying ahead of industry trends.</p>
-        <p class="skills__mainText skills__mainText--2">Here are some of my skills.</p>
-        <p class="skills__secondaryText">I also love cats</p>
-        <i class="skills__catsAnimation"></i>
+    <section class="outer-skills">
+        <div class="skills">
+            <p class="skills__mainText skills__mainText--1">I’m always eager to grow—whether by exploring new techniques, taking courses, or staying ahead of industry trends.</p>
+            <p class="skills__mainText skills__mainText--2">Here are some of my skills.</p>
+            <p class="skills__secondaryText">I also love cats</p>
+            <i class="skills__scrollCats"></i>
+        </div>
     </section>
 
-    <section class="projects">
+    <section class="projects" id="work">
         <h2 class="projects__title">Here are some of my projects</h2>
         <ul class="projects__grid">
             <li class="projects__card projects__card--1">
@@ -87,7 +94,12 @@
                         <h4 class="projects__name">UX/UI | Website redesign</h4>
                         <p class="projects__description">This project aimed to analyse the Landing Jobs website, and propose an improvement / redesign, aiming to optimise user experience, aesthetics and functionality taking into account all the good and bad UX practices as well as user needs.</p>
                     </div>
-                    <a href="" class="projects__link">Learn more &rarr;</a>
+                    <a 
+                        href="https://www.behance.net/gallery/199261697/Landing-Jobs-UXUI-Redesign" 
+                        class="projects__link"
+                    >
+                        Learn more &rarr;
+                    </a>
                 </div>
             </li>
             <li class="projects__card projects__card--2">
@@ -96,7 +108,12 @@
                         <h4 class="projects__name">Daily UI | Landing page</h4>
                         <p class="projects__description">The objective of this project was to practice and refine my skills in Figma by designing the landing page of a travel website and exploring its adaptation for mobile devices.</p>
                     </div>
-                    <a href="" class="projects__link">Learn more &rarr;</a>
+                    <a 
+                        href="https://www.behance.net/gallery/188074251/Daily-UI-Design-Travel-Website" 
+                        class="projects__link"
+                    >
+                        Learn more &rarr;
+                    </a>
                 </div>
             </li>
             <li class="projects__card projects__card--3">
@@ -105,7 +122,12 @@
                         <h4 class="projects__name">Daily UI | App design</h4>
                         <p class="projects__description">The objective of this project was to practice and refine my skills in Figma by designing a bike app.</p>
                     </div>
-                    <a href="" class="projects__link">Learn more &rarr;</a>
+                    <a 
+                        href="https://www.behance.net/gallery/215750805/Daily-UI-Bike-App" 
+                        class="projects__link"
+                    >
+                        Learn more &rarr;
+                    </a>
                 </div>
             </li>
             <li class="projects__card projects__card--4">
@@ -114,13 +136,18 @@
                         <h4 class="projects__name">Daily UI | App design | First design project</h4>
                         <p class="projects__description">This project represents one of my earliest steps into UX/UI Design, focusing on designing a weather app interface. While it doesn’t include research, it highlights my initial exploration of creating clean visuals, and developing my skills in Figma.</p>
                     </div>
-                    <a href="" class="projects__link">Learn more &rarr;</a>
+                    <a 
+                        href="https://www.behance.net/gallery/146708961/Daily-UI-Weather-App-Design" 
+                        class="projects__link"
+                    >
+                        Learn more &rarr;
+                    </a>
                 </div>
             </li>
         </ul>
     </section>
 
-    <section class="process">
+    <section class="process" id="process">
         <p>Whatever the challenge, I always follow a reliable and straightforward methodology...</p>
         <p>Thoroughly grasp the project goals, understand the target audience, their needs, and evaluate existing solutions.</p>
         <p>Refine early and often using sketches, wireframes, and prototypes to discover what works best.</p>
@@ -130,20 +157,32 @@
     <section class="outro-1">
         <p>Like what you see?</p>
         <p>I designed this experience for you!</p>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
+        <i class="outro-1__cat outro-1__cat--1"></i>
+        <i class="outro-1__cat outro-1__cat--2"></i>
+        <i class="outro-1__cat outro-1__cat--3"></i>
+        <i class="outro-1__cat outro-1__cat--4"></i>
     </section>
 
-    <section class="outro-2">
-        <a href="mailto:carolina_valadao8@hotmail.com" class="outro-2__cta">Let’s make it meow-some!</a>
-        <i class="outro-2__cat"></i>
+    <section class="outro-2" id="contacts">
+        <div class="outro-2__wrapper">
+            <a href="mailto:carolina_valadao8@hotmail.com" class="outro-2__cta">Let’s make it meow-some!</a>
+            <i class="outro-2__cat"></i>
+        </div>
     </section>
 
     <footer class="footer">
         <p class="footer__copyright">Made with cats and coffee. © 2025 Carolina Valadão</p>
         <p class="footer__disclaimer">Some visuals designed by Freepik contributors</p>
     </footer>
+
+    <nav class="menu">
+        <i class="menu__closeBtn" onclick="closeMenu()"></i>
+        <ul class="menu__itemList">
+            <li class="menu__item"><a href="#about" onclick="closeMenu()">About</a></li>
+            <li class="menu__item"><a href="#work" onclick="closeMenu()">Work</a></li>
+            <li class="menu__item"><a href="#process" onclick="closeMenu()">Process</a></li>
+            <li class="menu__item"><a href="#contacts" onclick="closeMenu()">Contacts</a></li>
+        </ul>
+    </nav>
 </body>
 </html>
