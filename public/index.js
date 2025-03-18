@@ -20,22 +20,46 @@ setScrollVar()
 // Skills Cats animation
 window.addEventListener('scroll', () => {
     const skillsSectionEl = document.querySelector('.outer-skills')
-    const skillsRect = skillsSectionEl.getBoundingClientRect();
+    const skillsRect = skillsSectionEl.getBoundingClientRect()
     const skillsScrollPercentage = Math.round(-skillsRect.top / skillsRect.height * 100)
 
     const scrollCatsEl = document.querySelector('.skills__scrollCats')
-    scrollCatsEl.style.transform = `translateX(${100 - skillsScrollPercentage * 1.85}%)`;
+    scrollCatsEl.style.transform = `translateX(${100 - skillsScrollPercentage * 1.85}%)`
 
     const secondaryTextEl = document.querySelector('.skills__secondaryText')
     secondaryTextEl.style.opacity = 0 + skillsScrollPercentage / 50
+})
+
+// Outro Cats animation
+window.addEventListener('scroll', () => {
+    const outroEl = document.querySelector('.outro-1')
+    const outroCat1El = document.querySelector('.outro-1__cat--1')
+    const outroCat2El = document.querySelector('.outro-1__cat--2')
+    const outroCat3El = document.querySelector('.outro-1__cat--3')
+    const outroCat4El = document.querySelector('.outro-1__cat--4')
+
+    const outroRect = outroEl.getBoundingClientRect()
+    const outroScrollPercentage = Math.round(-outroRect.top / outroRect.height * 100)
+
+    outroCat1El.style.transform = `translate(${Math.min((outroScrollPercentage / 3), 0)}vh, ${Math.min((outroScrollPercentage / 3), 0)}vw)`
+    outroCat1El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
+
+    outroCat2El.style.transform = `translate(${Math.min((outroScrollPercentage / 3), 0)}vh, ${-Math.min((outroScrollPercentage / 3), 0)}vw)`
+    outroCat2El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
+
+    outroCat3El.style.transform = `translate(${-Math.min((outroScrollPercentage / 3), 0)}vh, ${-Math.min((outroScrollPercentage / 3), 0)}vw)`
+    outroCat3El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
+
+    outroCat4El.style.transform = `translate(${-Math.min((outroScrollPercentage / 3), 0)}vh, ${Math.min((outroScrollPercentage / 3), 0)}vw)`
+    outroCat4El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
 })
 
 // Background Color on scroll
 window.addEventListener('scroll', () => {
     const clientScrollTop = document.documentElement.scrollTop
     
-    const htmlElement = document.documentElement;
-    const bodyElement = document.body;
+    const htmlElement = document.documentElement
+    const bodyElement = document.body
 
     const documentHeight = Math.max(
         htmlElement.clientHeight, htmlElement.scrollHeight, htmlElement.offsetHeight,
@@ -43,19 +67,19 @@ window.addEventListener('scroll', () => {
     );
 
     const aboutSectionEl = document.querySelector('.about')
-    const aboutRect = aboutSectionEl.getBoundingClientRect();
+    const aboutRect = aboutSectionEl.getBoundingClientRect()
     const aboutScrollPercentage = Math.round(-aboutRect.top / aboutRect.height * 100)
 
     const fadeStartEl = document.querySelector('.about__faded--start')
     const fadeEndEl = document.querySelector('.about__faded--end')
 
     const projectsSectionEl = document.querySelector('.projects')
-    const projectsRect = projectsSectionEl.getBoundingClientRect();
+    const projectsRect = projectsSectionEl.getBoundingClientRect()
     const projectsScrollPercentageUp = Math.round(-projectsRect.top / aboutRect.height * 100)
     const projectsScrollPercentageDown = Math.round(-projectsRect.top / projectsRect.height * 100)
 
     const outroSectionEl = document.querySelector('.outro-1')
-    const outroRect = outroSectionEl.getBoundingClientRect();
+    const outroRect = outroSectionEl.getBoundingClientRect()
     const outroScrollPercentage = Math.round(-outroRect.top / outroRect.height * 100)
 
 
