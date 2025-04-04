@@ -5,8 +5,7 @@
     flex-direction: column;
     justify-content: center;
 
-    &__copyright,
-    &__disclaimer {
+    &__copyright {
         font-family: "RecoletaAlt", serif;
         color: $color-white;
         text-align: center;
@@ -15,17 +14,29 @@
 
     &__copyright {
         font-size: 14px;
+        margin-bottom: 16px;
 
         @media (min-width: 768px) {
             font-size: 16px;
         }
     }
 
-    &__disclaimer {
-        font-size: 10px;
+    &__links {
+        margin: 0 auto;
+        font-family: "RecoletaAlt", serif;
+        font-size: 16px;
+        line-height: 24px;
 
-        @media (min-width: 768px) {
-            font-size: 12px;
+        & a,
+        a:visited,
+        a:active {
+            color: $color-white;
+            text-decoration-thickness: .7px;
+            text-underline-offset: 1.5px;
+
+            &:not(:last-child) {
+                margin-right: 24px;
+            }
         }
     }
 }
