@@ -42,15 +42,18 @@ body {
   src: url(../fonts/Recoleta_Alt_Bold.otf);
 }
 .outer-main {
-  height: 185vh;
+  height: 290vh;
 }
 
 .main {
   height: 100vh;
   position: sticky;
+  display: flex;
   top: 0;
 }
 .main__header {
+  position: absolute;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -97,7 +100,7 @@ body {
     border-radius: 0;
     appearance: none;
     color: #305CE2;
-    font-family: "RecoletaAltMedium", serif;
+    font-family: "RecoletaAlt", serif;
     font-size: 30px;
     line-height: 26px;
     cursor: pointer;
@@ -105,20 +108,21 @@ body {
   }
 }
 .main__animationContainer {
+  align-self: center;
   margin: 0 auto;
-  padding-top: 70px;
+  padding-top: 135px;
   width: fit-content;
 }
 @media (min-width: 768px) {
   .main__animationContainer {
-    padding-top: unset;
+    padding-top: 175px;
   }
 }
 .main__cat {
   display: block;
   width: 320px;
   height: 467px;
-  background-image: url(../images/0.png);
+  background-image: url(../images/1.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -134,7 +138,7 @@ body {
 }
 
 .about {
-  font-family: "RecoletaAltMedium", serif;
+  font-family: "RecoletaAlt", serif;
   position: relative;
   min-height: 100vh;
   margin: 0 auto;
@@ -148,18 +152,19 @@ body {
   max-width: 784px;
 }
 .about__tabs {
+  font-family: "RecoletaAltMedium", serif;
   height: 26px;
   font-size: 16px;
   line-height: 26px;
   list-style: none;
   display: flex;
-  margin: 0 0 16px;
+  margin: 0 0 40px;
   overflow: scroll;
   scrollbar-width: none;
 }
 @media (min-width: 768px) {
   .about__tabs {
-    margin: 0 auto 16px;
+    margin: 0 auto 40px;
   }
 }
 .about__tabs li:nth-child(2) {
@@ -209,6 +214,7 @@ body {
   color: #01104C;
 }
 .about__content {
+  min-height: 225px;
   margin: 0 20px;
   text-align: center;
   font-size: 20px;
@@ -238,7 +244,7 @@ body {
   overflow: hidden;
 }
 .skills__mainText, .skills__secondaryText {
-  font-family: "RecoletaAltMedium", serif;
+  font-family: "RecoletaAlt", serif;
   font-size: 20px;
   line-height: 32px;
   max-width: 784px;
@@ -248,7 +254,7 @@ body {
 }
 @media (min-width: 768px) {
   .skills__mainText, .skills__secondaryText {
-    font-family: "RecoletaAltMedium", serif;
+    font-family: "RecoletaAlt", serif;
     font-size: 24px;
     line-height: 40px;
   }
@@ -257,6 +263,7 @@ body {
   color: #01104C;
 }
 .skills__mainText--2 {
+  font-family: "RecoletaAltMedium", serif;
   margin-bottom: 40px;
 }
 .skills__secondaryText {
@@ -271,9 +278,15 @@ body {
   width: 1270px;
   height: 190px;
   background-image: url(../../images/scroll-cats.png);
-  background-size: cover;
+  background-size: contain;
 }
 @media (min-width: 768px) {
+  .skills__scrollCats {
+    width: 1770px;
+    height: 265px;
+  }
+}
+@media (min-width: 1460px) {
   .skills__scrollCats {
     width: 2000px;
     height: 300px;
@@ -290,7 +303,7 @@ body {
   }
 }
 .projects__title {
-  font-family: "RecoletaAltMedium", serif;
+  font-family: "RecoletaAlt", serif;
   font-size: 20px;
   line-height: 32px;
   font-weight: 500;
@@ -300,7 +313,7 @@ body {
 }
 @media (min-width: 768px) {
   .projects__title {
-    font-family: "RecoletaAltMedium", serif;
+    font-family: "RecoletaAlt", serif;
     font-size: 24px;
     line-height: 40px;
     padding-bottom: 56px;
@@ -351,6 +364,35 @@ body {
 .projects__card--4 {
   background-image: url(../images/project-4.png);
 }
+.projects__card--5 {
+  background-image: url(../images/project-5.png);
+}
+.projects__card--behance {
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.projects__card--behance::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-image: url(../images/logo-behance.png);
+  background-size: contain;
+}
+.projects__card--behance::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+  background-image: url(../images/arrow-icon.png);
+  background-size: contain;
+}
+.projects__card--behance:hover {
+  background-color: #0E0E0E;
+}
 .projects__info {
   width: 100%;
   height: 100%;
@@ -368,7 +410,7 @@ body {
 }
 .projects__name {
   color: #989898;
-  font-family: "RecoletaAltMedium", serif;
+  font-family: "RecoletaAlt", serif;
   font-size: 20px;
   line-height: 32px;
   margin-bottom: 28px;
@@ -380,14 +422,27 @@ body {
   line-height: 32px;
 }
 .projects__link {
+  text-decoration: none;
   color: #FEFFFD;
   font-family: "RecoletaAltBold", serif;
   font-size: 20px;
   line-height: 22px;
 }
+.projects__link:hover {
+  color: #7A9DF6;
+}
+.projects__link--behance {
+  text-decoration: underline;
+  font-family: "RecoletaAlt", serif;
+  font-size: 28px;
+  line-height: 40px;
+}
+.projects__link--behance:hover {
+  color: #FEFFFD;
+}
 
 .process p {
-  font-family: "RecoletaAltMedium", serif;
+  font-family: "RecoletaAlt", serif;
   font-size: 20px;
   line-height: 32px;
   height: 100vh;
@@ -403,7 +458,7 @@ body {
 }
 @media (min-width: 768px) {
   .process p {
-    font-family: "RecoletaAltMedium", serif;
+    font-family: "RecoletaAlt", serif;
     font-size: 24px;
     line-height: 40px;
   }
@@ -411,7 +466,7 @@ body {
 
 .outro-1 {
   position: relative;
-  font-family: "RecoletaAltMedium", serif;
+  font-family: "RecoletaAlt", serif;
   font-size: 24px;
   line-height: 40px;
   height: 100vh;
@@ -422,6 +477,18 @@ body {
   vertical-align: middle;
   color: #01104C;
   text-align: center;
+  overflow: hidden;
+}
+.outro-1 p {
+  font-family: "RecoletaAlt", serif;
+  font-size: 20px;
+  line-height: 32px;
+}
+@media (min-width: 768px) {
+  .outro-1 p {
+    font-size: 28px;
+    line-height: 40px;
+  }
 }
 .outro-1__cat {
   position: absolute;
@@ -503,7 +570,7 @@ body {
   margin-bottom: 64px;
 }
 .outro-2__cta {
-  font-family: "RecoletaAltMedium", serif;
+  font-family: "RecoletaAlt", serif;
   font-size: 20px;
   line-height: 32px;
   background-color: #FEFFFD;
@@ -522,7 +589,7 @@ body {
 }
 @media (min-width: 768px) {
   .outro-2__cta {
-    font-family: "RecoletaAltMedium", serif;
+    font-family: "RecoletaAlt", serif;
     font-size: 24px;
     line-height: 40px;
     padding: 18px 25px;

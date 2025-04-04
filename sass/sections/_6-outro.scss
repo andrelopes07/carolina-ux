@@ -9,6 +9,20 @@
     vertical-align: middle;
     color: $color-dark-blue;
     text-align: center;
+    overflow: hidden;
+
+    & p {
+        font-family: "RecoletaAlt", serif;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    @media (min-width: 768px) {
+        & p {
+            font-size: 28px;
+            line-height: 40px;
+        }
+    }
 
     &__cat {
         position: absolute;

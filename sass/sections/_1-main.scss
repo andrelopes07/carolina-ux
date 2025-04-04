@@ -1,13 +1,16 @@
 .outer-main {
-    height: 185vh;
+    height: 290vh;
 }
 
 .main {
     height: 100vh;
     position: sticky;
+    display: flex;
     top: 0;
 
     &__header {
+        position: absolute;
+        width: 100%;
         display: flex;
         justify-content: space-between;
     }
@@ -47,7 +50,7 @@
             display: block;
             @include unbuttonize;
             color: $color-mid-light-blue;
-            font-family: "RecoletaAltMedium", serif;
+            font-family: "RecoletaAlt", serif;
             font-size: 30px;
             line-height: 26px;
             cursor: pointer;
@@ -56,12 +59,13 @@
     }
 
     &__animationContainer {
+        align-self: center;
         margin: 0 auto;
-        padding-top: 70px;
+        padding-top: 135px;
         width: fit-content;
 
-        @media (min-width: 768px) { 
-            padding-top: unset;
+        @media (min-width: 768px) {
+            padding-top: 175px;
         }
     }
 
@@ -69,7 +73,7 @@
         display: block;
         width: 320px;
         height: 467px;
-        background-image: url(../images/0.png);
+        background-image: url(../images/1.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

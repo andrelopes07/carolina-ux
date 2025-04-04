@@ -8,10 +8,10 @@ function setScrollVar() {
 
     const imageContainer = document.querySelector('.main__cat')
 
-    if (screenScrollPercentage <= 29 && imageContainer && imageContainer.style) {
-        imageContainer.style.backgroundImage = `url('./images/${Math.floor(Math.min((screenScrollPercentage), 28))}.png')`
-    } else if (screenScrollPercentage > 28) {
-        imageContainer.style.backgroundImage = `url('./images/28.png')`
+    if (screenScrollPercentage <= 58 && imageContainer && imageContainer.style) {
+        imageContainer.style.backgroundImage = `url('./images/${Math.floor(Math.min((screenScrollPercentage + 1), 58))}.png')`
+    } else if (screenScrollPercentage > 59) {
+        imageContainer.style.backgroundImage = `url('./images/58.png')`
     }
 }
 
@@ -41,17 +41,19 @@ window.addEventListener('scroll', () => {
     const outroRect = outroEl.getBoundingClientRect()
     const outroScrollPercentage = Math.round(-outroRect.top / outroRect.height * 100)
 
-    outroCat1El.style.transform = `translate(${Math.min((outroScrollPercentage / 3), 0)}vh, ${Math.min((outroScrollPercentage / 3), 0)}vw)`
-    outroCat1El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
-
-    outroCat2El.style.transform = `translate(${Math.min((outroScrollPercentage / 3), 0)}vh, ${-Math.min((outroScrollPercentage / 3), 0)}vw)`
-    outroCat2El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
-
-    outroCat3El.style.transform = `translate(${-Math.min((outroScrollPercentage / 3), 0)}vh, ${-Math.min((outroScrollPercentage / 3), 0)}vw)`
-    outroCat3El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
-
-    outroCat4El.style.transform = `translate(${-Math.min((outroScrollPercentage / 3), 0)}vh, ${Math.min((outroScrollPercentage / 3), 0)}vw)`
-    outroCat4El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
+    if (outroScrollPercentage >= -100) {
+        outroCat1El.style.transform = `translate(${Math.min((outroScrollPercentage / 3), 0)}vh, ${Math.min((outroScrollPercentage / 3), 0)}vw)`
+        outroCat1El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
+    
+        outroCat2El.style.transform = `translate(${Math.min((outroScrollPercentage / 3), 0)}vh, ${-Math.min((outroScrollPercentage / 3), 0)}vw)`
+        outroCat2El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
+    
+        outroCat3El.style.transform = `translate(${-Math.min((outroScrollPercentage / 3), 0)}vh, ${-Math.min((outroScrollPercentage / 3), 0)}vw)`
+        outroCat3El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
+    
+        outroCat4El.style.transform = `translate(${-Math.min((outroScrollPercentage / 3), 0)}vh, ${Math.min((outroScrollPercentage / 3), 0)}vw)`
+        outroCat4El.style.opacity = `${100 + outroScrollPercentage * 0.5}%`
+    }
 })
 
 // Background Color on scroll
@@ -133,9 +135,9 @@ window.addEventListener('scroll', () => {
 // Tabs Section
 const tabsText = [
     "Hi there! I’m Carolina, a passionate Digital Product Designer who loves crafting intuitive and visually captivating experiences. Whether you’re here for inspiration or curiosity, I hope my work sparks joy and creativity!",
-    "Hello, recruiters! I’m Carolina Valadão, a UX/UI Designer with a knack for blending creativity and user-centered solutions. My goal? To design experiences that engage and inspire. Let's connect—I'd love to contribute to your team!",
+    "Hello, recruiters! I’m Carolina Valadão, a UX/UI Designer with a knack for blending creativity and user-centered solutions. My goal? To design experiences that engage and inspire. Let's connect! I'd love to contribute to your team!",
     "Hey, fellow designers! I’m Carolina, a UX/UI enthusiast with a love for elegant interfaces and seamless user journeys. I believe great design is where aesthetics meet functionality. Let’s exchange ideas and create something impactful!",
-    "Hi, Product Managers! I thrive at the intersection of user needs and business goals. My focus is on delivering designs that balance usability, scalability, and impact—because great products start with great collaboration!",
+    "Hi, Product Managers! I thrive at the intersection of user needs and business goals. My focus is on delivering designs that balance usability, scalability, and impact, because great products start with great collaboration!",
     "Hello, Engineers! I design with {efficiency} && {collaboration} in mind. While (I’m ≠ coder), I value clean handoffs & seamless teamwork. Together, let’s debug ideas & ship great products!"
 ]
 

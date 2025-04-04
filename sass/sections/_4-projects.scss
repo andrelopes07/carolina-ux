@@ -64,6 +64,38 @@
         &--4 {
             background-image: url(../images/project-4.png);
         }
+        &--5 {
+            background-image: url(../images/project-5.png);
+        }
+        &--behance {
+            &::before {
+                content: "";
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                background-image: url(../images/logo-behance.png);
+                background-size: contain;
+            }
+            
+            background-color: $color-black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .3s;
+
+            &::after {
+                content: "";
+                width: 35px;
+                height: 35px;
+                margin-left: 10px;
+                background-image: url(../images/arrow-icon.png);
+                background-size: contain;
+            }
+
+            &:hover {
+                background-color: #0E0E0E;
+            }
+        }
     }
 
     &__info {
@@ -85,7 +117,7 @@
 
     &__name {
         color: $color-gray;
-        font-family: "RecoletaAltMedium", serif;
+        font-family: "RecoletaAlt", serif;
         font-size: 20px;
         line-height: 32px;
         margin-bottom: 28px;
@@ -99,9 +131,25 @@
     }
 
     &__link {
+        text-decoration: none;
         color: $color-white;
         font-family: "RecoletaAltBold", serif;
         font-size: 20px;
         line-height: 22px;
+
+        &:hover {
+            color: $color-light-blue;
+        }
+
+        &--behance {
+            text-decoration: underline;
+            font-family: "RecoletaAlt", serif;
+            font-size: 28px;
+            line-height: 40px;
+
+            &:hover {
+                color: $color-white;
+            }
+        }
     }
 }
