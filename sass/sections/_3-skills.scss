@@ -30,7 +30,6 @@
         color: $color-dark-blue;
 
         &--2 {
-            font-family: "RecoletaAltMedium", serif;
             margin-bottom: 40px;
         }
     }
@@ -46,18 +45,14 @@
         right: 0;
         transform: translateX(100%);
         width: 1270px;
-        height: 190px;
+        height: 30vh;
         background-image: url(../../images/scroll-cats.png);
         background-size: contain;
+        background-repeat: no-repeat;
 
         @media (min-width: 768px) {
-            width: 1770px;
-            height: 265px;
-        }
-
-        @media (min-width: 1460px) {
             width: 2000px;
-            height: 300px;
+            height: 35vh
         }
     }
 }

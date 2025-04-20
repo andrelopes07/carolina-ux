@@ -17,6 +17,47 @@ function setScrollVar() {
 
 setScrollVar()
 
+// Process messages animation
+window.addEventListener('scroll', () => {
+    const processSectionEl = document.querySelector('.process')
+    const processRect = processSectionEl.getBoundingClientRect()
+    const processScrollPercentage = (Math.round(-processRect.top / processRect.height * 100)) + 25
+
+    const message1El = document.querySelector('.process__message--1')
+    const message2El = document.querySelector('.process__message--2')
+    const message3El = document.querySelector('.process__message--3')
+    const message4El = document.querySelector('.process__message--4')
+
+    // 1ST MESSAGE
+    if (processScrollPercentage >= 0 && processScrollPercentage <= 25) {
+        message1El.style.transform = `scale(${processScrollPercentage * 4}%)`
+    }
+    if (processScrollPercentage > 25 && processScrollPercentage <= 50) {
+        message1El.style.transform = `scale(${100 - ((processScrollPercentage - 25) * 4)}%)`
+    }
+    // 2ND MESSAGE
+    if (processScrollPercentage >= 25 && processScrollPercentage <= 50) {
+        message2El.style.transform = `scale(${(processScrollPercentage - 25) * 4}%)`
+    }
+    if (processScrollPercentage > 50 && processScrollPercentage <= 75) {
+        message2El.style.transform = `scale(${100 - ((processScrollPercentage - 50) * 4)}%)`
+    }
+    // 3RD MESSAGE
+    if (processScrollPercentage >= 50 && processScrollPercentage <= 75) {
+        message3El.style.transform = `scale(${(processScrollPercentage - 50) * 4}%)`
+    }
+    if (processScrollPercentage > 75 && processScrollPercentage <= 100) {
+        message3El.style.transform = `scale(${100 - ((processScrollPercentage - 75) * 4)}%)`
+    }
+    // 4TH MESSAGE
+    if (processScrollPercentage >= 75 && processScrollPercentage <= 100) {
+        message4El.style.transform = `scale(${(processScrollPercentage - 75) * 4}%)`
+    }
+    if (processScrollPercentage > 100 && processScrollPercentage <= 125) {
+        message4El.style.transform = `scale(${100 - ((processScrollPercentage - 100) * 4)}%)`
+    }
+})
+
 // Skills Cats animation
 window.addEventListener('scroll', () => {
     const skillsSectionEl = document.querySelector('.outer-skills')

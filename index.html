@@ -70,6 +70,11 @@
     <script src="./index.js" defer></script>
 </head>
 <body>
+    <div class="colourScheme">
+        <button class="colourScheme__toggle"></button>
+        <div class="colourScheme__tooltip">Dark mode coming soon!</div>
+    </div>
+
     <header class="outer-main">
         <div class="main">
             <div class="main__header">
@@ -80,10 +85,6 @@
             
             <div class="main__animationContainer">
                 <i class="main__cat"></i>
-            </div>
-    
-            <div class="main__toggleDarkMode">
-                <button></button>
             </div>
         </div>
     </header>
@@ -121,7 +122,10 @@
             <li class="projects__card projects__card--1">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UX/UI | Website redesign</h4>
+                        <div class="projects__header">
+                            <h4 class="projects__name">UX/UI | Website redesign</h4>
+                            <span class="projects__lastUpdate">Last updated April 18</span>
+                        </div>
                         <p class="projects__description">This project aimed to analyse the Landing Jobs website, and propose an improvement / redesign, aiming to optimise user experience, aesthetics and functionality taking into account all the good and bad UX practices as well as user needs.</p>
                     </div>
                     <a 
@@ -136,8 +140,12 @@
             <li class="projects__card projects__card--2">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UX Research on Sports Betting - Key Insights & Opportunities</h4>
-                        <p class="projects__description">This UX research project focuses on improving the user experience of a sports betting platform. Through user interviews, surveys, and competitive analysis, I'm identifying pain points and opportunities for improvement. The findings will directly inform future design decisions.</p>
+                        <div class="projects__header">
+                            <h4 class="projects__name projects__name--desktop">UX/UI Case Study | Sports Betting</h4>
+                            <h4 class="projects__name projects__name--mobile">UX/UI | Sports Betting</h4>
+                            <span class="projects__lastUpdate">Last updated April 17</span>
+                        </div>
+                        <p class="projects__description">This UX case study explores the sports betting industry, focusing on clarity, trust, and usability.<br/>Based on research, I designed and tested the account creation and identity verification flow.<br/>Insights will guide future improvements in personalization and responsible gambling.</p>
                     </div>
                     <a 
                         href="https://www.behance.net/gallery/216455541/Sports-Betting-UX-Research-Work-in-Progress"
@@ -151,7 +159,9 @@
             <li class="projects__card projects__card--3">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UI concept | Landing page</h4>
+                        <div class="projects__header">
+                            <h4 class="projects__name">UI Design | Landing page</h4>
+                        </div>
                         <p class="projects__description">The objective of this project was to practice and refine my skills in Figma by designing the landing page of a travel website and exploring its adaptation for mobile devices.</p>
                     </div>
                     <a 
@@ -166,7 +176,9 @@
             <li class="projects__card projects__card--4">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UI concept | App design</h4>
+                        <div class="projects__header">
+                            <h4 class="projects__name">UI Design | App design</h4>
+                        </div>
                         <p class="projects__description">The objective of this project was to practice and refine my skills in Figma by designing a bike app.</p>
                     </div>
                     <a 
@@ -181,7 +193,9 @@
             <li class="projects__card projects__card--5">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UI concept | App design</h4>
+                        <div class="projects__header">
+                            <h4 class="projects__name">UI Design | App design</h4>
+                        </div>
                         <p class="projects__description">This project represents one of my earliest steps into UX/UI Design, focusing on designing a weather app interface. While it doesn’t include research, it highlights my initial exploration of creating clean visuals, and developing my skills in Figma.</p>
                     </div>
                     <a 
@@ -204,10 +218,10 @@
     </section>
 
     <section class="process" id="process">
-        <p>Whatever the challenge, I always follow a reliable and straightforward methodology...</p>
-        <p>Thoroughly grasp the project goals, understand the target audience, their needs, and evaluate existing solutions.</p>
-        <p>Refine early and often using sketches, wireframes, and prototypes to discover what works best.</p>
-        <p>Gather user feedback throughout the design process to validate decisions and improve user experience.</p>
+        <p class="process__message process__message--1">Whatever the challenge, I always follow a reliable and straightforward methodology...</p>
+        <p class="process__message process__message--2">Thoroughly grasp the project goals, understand the target audience, their needs, and evaluate existing solutions.</p>
+        <p class="process__message process__message--3">Refine early and often using sketches, wireframes, and prototypes to discover what works best.</p>
+        <p class="process__message process__message--4">Gather user feedback throughout the design process to validate decisions and improve user experience.</p>
     </section>
 
     <section class="outro-1">
