@@ -28,6 +28,10 @@
             width: 148px;
             height: 35px;
         }
+
+        &--dark {
+            background-image: url(../images/logo-dark.png);
+        }
     }
 
     &__hamburgerBtn {
@@ -40,6 +44,10 @@
 
         @media (min-width: 768px) {
             display: none;
+        }
+
+        &--dark {
+            background-image: url(../images/hamburger-dark.png);
         }
     }
     
@@ -55,6 +63,10 @@
             line-height: 26px;
             cursor: pointer;
             margin: 60px;
+        }
+
+        &--dark {
+            color: $color-cta;
         }
     }
 
@@ -73,7 +85,6 @@
         display: block;
         width: 320px;
         height: 467px;
-        background-image: url(../images/1.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

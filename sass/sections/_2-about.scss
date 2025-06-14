@@ -74,6 +74,18 @@
             text-decoration: none;
             color: $color-dark-blue;
         }
+
+        &--dark {
+            color: $color-tabs-dark;
+
+            &:hover {
+                color: $color-cta;
+            }
+        }
+    }
+
+    .about__link--active.about__link--dark {
+        color: $color-cta;
     }
 
     &__content {
@@ -82,7 +94,6 @@
         text-align: center;
         font-size: 20px;
         line-height: 32px;
-        color: $color-dark-blue;
 
         @media (min-width: 768px) {
             font-size: 24px;

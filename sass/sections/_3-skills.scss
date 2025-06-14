@@ -27,8 +27,6 @@
     }
 
     &__mainText {
-        color: $color-dark-blue;
-
         &--2 {
             margin-bottom: 40px;
         }
@@ -53,6 +51,10 @@
         @media (min-width: 768px) {
             width: 2000px;
             height: 35vh
+        }
+
+        &--dark {
+            background-image: url(../../images/scroll-cats-dark.png);
         }
     }
 }

@@ -66,10 +66,69 @@
     <link rel="preload" as="image" href="./images/57.png">
     <link rel="preload" as="image" href="./images/58.png">
     <link rel="preload" as="image" href="./images/outro-2-cat-hover.png">
+
+    <link rel="preload" as="image" href="./images/1-dark.png">
+    <link rel="preload" as="image" href="./images/2-dark.png">
+    <link rel="preload" as="image" href="./images/3-dark.png">
+    <link rel="preload" as="image" href="./images/4-dark.png">
+    <link rel="preload" as="image" href="./images/5-dark.png">
+    <link rel="preload" as="image" href="./images/6-dark.png">
+    <link rel="preload" as="image" href="./images/7-dark.png">
+    <link rel="preload" as="image" href="./images/8-dark.png">
+    <link rel="preload" as="image" href="./images/9-dark.png">
+    <link rel="preload" as="image" href="./images/10-dark.png">
+    <link rel="preload" as="image" href="./images/11-dark.png">
+    <link rel="preload" as="image" href="./images/12-dark.png">
+    <link rel="preload" as="image" href="./images/13-dark.png">
+    <link rel="preload" as="image" href="./images/14-dark.png">
+    <link rel="preload" as="image" href="./images/15-dark.png">
+    <link rel="preload" as="image" href="./images/16-dark.png">
+    <link rel="preload" as="image" href="./images/17-dark.png">
+    <link rel="preload" as="image" href="./images/18-dark.png">
+    <link rel="preload" as="image" href="./images/19-dark.png">
+    <link rel="preload" as="image" href="./images/20-dark.png">
+    <link rel="preload" as="image" href="./images/21-dark.png">
+    <link rel="preload" as="image" href="./images/22-dark.png">
+    <link rel="preload" as="image" href="./images/23-dark.png">
+    <link rel="preload" as="image" href="./images/24-dark.png">
+    <link rel="preload" as="image" href="./images/25-dark.png">
+    <link rel="preload" as="image" href="./images/26-dark.png">
+    <link rel="preload" as="image" href="./images/27-dark.png">
+    <link rel="preload" as="image" href="./images/28-dark.png">
+    <link rel="preload" as="image" href="./images/29-dark.png">
+    <link rel="preload" as="image" href="./images/30-dark.png">
+    <link rel="preload" as="image" href="./images/31-dark.png">
+    <link rel="preload" as="image" href="./images/32-dark.png">
+    <link rel="preload" as="image" href="./images/33-dark.png">
+    <link rel="preload" as="image" href="./images/34-dark.png">
+    <link rel="preload" as="image" href="./images/40-dark.png">
+    <link rel="preload" as="image" href="./images/41-dark.png">
+    <link rel="preload" as="image" href="./images/42-dark.png">
+    <link rel="preload" as="image" href="./images/43-dark.png">
+    <link rel="preload" as="image" href="./images/44-dark.png">
+    <link rel="preload" as="image" href="./images/45-dark.png">
+    <link rel="preload" as="image" href="./images/46-dark.png">
+    <link rel="preload" as="image" href="./images/47-dark.png">
+    <link rel="preload" as="image" href="./images/48-dark.png">
+    <link rel="preload" as="image" href="./images/49-dark.png">
+    <link rel="preload" as="image" href="./images/50-dark.png">
+    <link rel="preload" as="image" href="./images/51-dark.png">
+    <link rel="preload" as="image" href="./images/52-dark.png">
+    <link rel="preload" as="image" href="./images/53-dark.png">
+    <link rel="preload" as="image" href="./images/54-dark.png">
+    <link rel="preload" as="image" href="./images/55-dark.png">
+    <link rel="preload" as="image" href="./images/56-dark.png">
+    <link rel="preload" as="image" href="./images/57-dark.png">
+    <link rel="preload" as="image" href="./images/58-dark.png">
+    <link rel="preload" as="image" href="./images/outro-2-cat-hover-dark.png">
     
     <script src="./index.js" defer></script>
 </head>
 <body>
+    <div class="colourScheme">
+        <button class="colourScheme__toggle" onclick="handleColourSchemeToggleClick()"></button>
+    </div>
+
     <header class="outer-main">
         <div class="main">
             <div class="main__header">
@@ -80,10 +139,6 @@
             
             <div class="main__animationContainer">
                 <i class="main__cat"></i>
-            </div>
-    
-            <div class="main__toggleDarkMode">
-                <button></button>
             </div>
         </div>
     </header>
@@ -121,7 +176,10 @@
             <li class="projects__card projects__card--1">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UX/UI | Website redesign</h4>
+                        <div class="projects__header">
+                            <h4 class="projects__name">UX/UI | Website redesign</h4>
+                            <span class="projects__lastUpdate">Last updated April 18</span>
+                        </div>
                         <p class="projects__description">This project aimed to analyse the Landing Jobs website, and propose an improvement / redesign, aiming to optimise user experience, aesthetics and functionality taking into account all the good and bad UX practices as well as user needs.</p>
                     </div>
                     <a 
@@ -136,8 +194,12 @@
             <li class="projects__card projects__card--2">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UX Research on Sports Betting - Key Insights & Opportunities</h4>
-                        <p class="projects__description">This UX research project focuses on improving the user experience of a sports betting platform. Through user interviews, surveys, and competitive analysis, I'm identifying pain points and opportunities for improvement. The findings will directly inform future design decisions.</p>
+                        <div class="projects__header">
+                            <h4 class="projects__name projects__name--desktop">UX/UI Case Study | Sports Betting</h4>
+                            <h4 class="projects__name projects__name--mobile">UX/UI | Sports Betting</h4>
+                            <span class="projects__lastUpdate">Last updated April 17</span>
+                        </div>
+                        <p class="projects__description">This UX case study explores the sports betting industry, focusing on clarity, trust, and usability.<br/>Based on research, I designed and tested the account creation and identity verification flow.<br/>Insights will guide future improvements in personalization and responsible gambling.</p>
                     </div>
                     <a 
                         href="https://www.behance.net/gallery/216455541/Sports-Betting-UX-Research-Work-in-Progress"
@@ -151,7 +213,9 @@
             <li class="projects__card projects__card--3">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UI concept | Landing page</h4>
+                        <div class="projects__header">
+                            <h4 class="projects__name">UI Design | Landing page</h4>
+                        </div>
                         <p class="projects__description">The objective of this project was to practice and refine my skills in Figma by designing the landing page of a travel website and exploring its adaptation for mobile devices.</p>
                     </div>
                     <a 
@@ -166,7 +230,9 @@
             <li class="projects__card projects__card--4">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UI concept | App design</h4>
+                        <div class="projects__header">
+                            <h4 class="projects__name">UI Design | App design</h4>
+                        </div>
                         <p class="projects__description">The objective of this project was to practice and refine my skills in Figma by designing a bike app.</p>
                     </div>
                     <a 
@@ -181,7 +247,9 @@
             <li class="projects__card projects__card--5">
                 <div class="projects__info">
                     <div class="projects__contentWrapper">
-                        <h4 class="projects__name">UI concept | App design</h4>
+                        <div class="projects__header">
+                            <h4 class="projects__name">UI Design | App design</h4>
+                        </div>
                         <p class="projects__description">This project represents one of my earliest steps into UX/UI Design, focusing on designing a weather app interface. While it doesn’t include research, it highlights my initial exploration of creating clean visuals, and developing my skills in Figma.</p>
                     </div>
                     <a 
@@ -204,10 +272,10 @@
     </section>
 
     <section class="process" id="process">
-        <p>Whatever the challenge, I always follow a reliable and straightforward methodology...</p>
-        <p>Thoroughly grasp the project goals, understand the target audience, their needs, and evaluate existing solutions.</p>
-        <p>Refine early and often using sketches, wireframes, and prototypes to discover what works best.</p>
-        <p>Gather user feedback throughout the design process to validate decisions and improve user experience.</p>
+        <p class="process__message process__message--1">Whatever the challenge, I always follow a reliable and straightforward methodology...</p>
+        <p class="process__message process__message--2">Thoroughly grasp the project goals, understand the target audience, their needs, and evaluate existing solutions.</p>
+        <p class="process__message process__message--3">Refine early and often using sketches, wireframes, and prototypes to discover what works best.</p>
+        <p class="process__message process__message--4">Gather user feedback throughout the design process to validate decisions and improve user experience.</p>
     </section>
 
     <section class="outro-1">
@@ -221,7 +289,7 @@
 
     <section class="outro-2" id="contacts">
         <div class="outro-2__wrapper">
-            <a href="mailto:carolinavaladaodesign@gmail.com" class="outro-2__cta">Let’s make it meow-some!</a>
+            <a href="mailto:carolinadesigncreative@gmail.com" class="outro-2__cta">Let’s make it meow-some!</a>
             <i class="outro-2__cat"></i>
         </div>
     </section>
@@ -230,7 +298,7 @@
         <p class="footer__copyright">Made with cats and coffee. © 2025 Carolina Valadão</p>
         <div class="footer__links">
             <a href="https://www.linkedin.com/in/carolinavaladao/">Linkedin</a>
-            <a href="mailto:carolinavaladaodesign@gmail.com">Email</a>
+            <a href="mailto:carolinadesigncreative@gmail.com">Email</a>
         </div>
     </footer>
 
