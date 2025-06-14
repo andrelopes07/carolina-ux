@@ -1,21 +1,118 @@
-// Main Cat scroll animation
-window.addEventListener('scroll', setScrollVar)
-window.addEventListener('resize', setScrollVar)
+// Setting Colour Scheme
+let theme = (() => {
+    const localStorageTheme = localStorage?.getItem("theme") ?? ''
 
-function setScrollVar() {
+    if (['dark', 'light'].includes(localStorageTheme)) {
+        return localStorageTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    
+    return 'light'
+})()
+
+localStorage.setItem('theme', theme)
+
+calculateBgColour()
+toggleColourSchemeClasses()
+
+// Toggle Colour Scheme
+function handleColourSchemeToggleClick() {
+    const element = document.documentElement
+    element.classList.toggle("dark")
+
+    const isDark = element.classList.contains("dark")
+    localStorage.setItem("theme", isDark ? "dark" : "light")
+
+    theme = isDark ? 'dark' : 'light'
+
+    calculateBgColour()
+    handleMainCatAnimation()
+    toggleColourSchemeClasses()
+}
+
+function toggleColourSchemeClasses() {
+    const colourSchemeEl = document.getElementsByClassName('colourScheme__toggle')[0]
+    const logoEl = document.getElementsByClassName('main__logo')[0]
+    const closeEl = document.getElementsByClassName('main__menuBtn')[0]
+    const aboutLinkEls = document.getElementsByClassName('about__link')
+    const scrollCatsEl = document.getElementsByClassName('skills__scrollCats')[0]
+    const cat1El = document.getElementsByClassName('outro-1__cat--1')[0]
+    const cat2El = document.getElementsByClassName('outro-1__cat--2')[0]
+    const cat3El = document.getElementsByClassName('outro-1__cat--3')[0]
+    const cat4El = document.getElementsByClassName('outro-1__cat--4')[0]
+    const outro2CtaEl = document.getElementsByClassName('outro-2__cta')[0]
+    const outro2CatEl = document.getElementsByClassName('outro-2__cat')[0]
+    const menuEl = document.getElementsByClassName('menu')[0]
+    const menuCloseBtnEl = document.getElementsByClassName('menu__closeBtn')[0]
+    const menuItemEls = document.getElementsByClassName('menu__item')
+    
+    if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+        colourSchemeEl.classList.remove('colourScheme__toggle--dark')
+        logoEl.classList.remove('main__logo--dark')
+        closeEl.classList.remove('main__menuBtn--dark')
+        scrollCatsEl.classList.remove('skills__scrollCats--dark')
+        cat1El.classList.remove('outro-1__cat--1--dark')
+        cat2El.classList.remove('outro-1__cat--2--dark')
+        cat3El.classList.remove('outro-1__cat--3--dark')
+        cat4El.classList.remove('outro-1__cat--4--dark')
+        outro2CtaEl.classList.remove('outro-2__cta--dark')
+        outro2CatEl.classList.remove('outro-2__cat--dark')
+        menuEl.classList.remove('menu--dark')
+        menuCloseBtnEl.classList.remove('menu__closeBtn--dark')
+
+        for (const el of aboutLinkEls) {
+             el.classList.remove("about__link--dark");
+        }
+
+        for (const el of menuItemEls) {
+             el.classList.remove("menu__item--dark");
+        }
+    } else {
+        document.documentElement.classList.add('dark')
+        colourSchemeEl.classList.add('colourScheme__toggle--dark')
+        logoEl.classList.add('main__logo--dark')
+        closeEl.classList.add('main__menuBtn--dark')
+        scrollCatsEl.classList.add('skills__scrollCats--dark')
+        cat1El.classList.add('outro-1__cat--1--dark')
+        cat2El.classList.add('outro-1__cat--2--dark')
+        cat3El.classList.add('outro-1__cat--3--dark')
+        cat4El.classList.add('outro-1__cat--4--dark')
+        outro2CtaEl.classList.add('outro-2__cta--dark')
+        outro2CatEl.classList.add('outro-2__cat--dark')
+        menuEl.classList.add('menu--dark')
+        menuCloseBtnEl.classList.add('menu__closeBtn--dark')
+
+        for (const el of aboutLinkEls) {
+            el.classList.add("about__link--dark");
+        }
+
+        for (const el of menuItemEls) {
+             el.classList.add("menu__item--dark");
+        }
+    }
+}
+
+// Main Cat scroll animation
+window.addEventListener('scroll', handleMainCatAnimation)
+window.addEventListener('resize', handleMainCatAnimation)
+
+function handleMainCatAnimation() {
     const htmlElement = document.documentElement
     const screenScrollPercentage = (htmlElement.scrollTop / htmlElement.clientHeight / 3) * 100
 
     const imageContainer = document.querySelector('.main__cat')
 
     if (screenScrollPercentage <= 58 && imageContainer && imageContainer.style) {
-        imageContainer.style.backgroundImage = `url('./images/${Math.floor(Math.min((screenScrollPercentage + 1), 58))}.png')`
+        imageContainer.style.backgroundImage = `url('./images/${Math.floor(Math.min((screenScrollPercentage + 1), 58))}${theme === 'light' ? '' : '-dark'}.png')`
     } else if (screenScrollPercentage > 59) {
-        imageContainer.style.backgroundImage = `url('./images/58.png')`
+        imageContainer.style.backgroundImage = `url('./images/58${theme === 'light' ? '' : '-dark'}.png')`
     }
 }
 
-setScrollVar()
+handleMainCatAnimation()
 
 // Process messages animation
 window.addEventListener('scroll', () => {
@@ -98,7 +195,7 @@ window.addEventListener('scroll', () => {
 })
 
 // Background Color on scroll
-window.addEventListener('scroll', () => {
+function calculateBgColour() {
     const clientScrollTop = document.documentElement.scrollTop
     
     const htmlElement = document.documentElement
@@ -126,8 +223,9 @@ window.addEventListener('scroll', () => {
     const outroScrollPercentage = Math.round(-outroRect.top / outroRect.height * 100)
 
 
-    const [red, green, blue] = [255, 255, 255]
-    const [redBgColor, greenBgColor, blueBgColor] = [122, 157, 246]
+    
+    const [red, green, blue] = theme === 'light' ? [ 255, 255, 255] : [25, 48, 143]
+    const [redBgColor, greenBgColor, blueBgColor] = theme === 'light' ? [122, 157, 246] : [8, 16, 47]
 
     const increaseColor = (sectionScrollPercentage) => `
         ${Math.round(red - ((sectionScrollPercentage + 100) * ((red - redBgColor) / 100)))}, 
@@ -143,11 +241,13 @@ window.addEventListener('scroll', () => {
 
     const body = document.querySelector('body')
 
-    if(clientScrollTop === 0) {
-        body.style.backgroundColor = 'rgb(255,255,255)'
+    body.style.backgroundColor = theme === 'light' ? 'rgb(255,255,255)' : 'rgb(25, 48, 143)'
+
+    if (clientScrollTop === 0) {
+        body.style.backgroundColor = theme === 'light' ? 'rgb(255,255,255)' : 'rgb(25, 48, 143)'
     }
-    if(clientScrollTop === documentHeight - htmlElement.clientHeight) {
-        body.style.backgroundColor = 'rgb(255,255,255)'
+    if (clientScrollTop === documentHeight - htmlElement.clientHeight) {
+        body.style.backgroundColor = theme === 'light' ? 'rgb(255,255,255)' : 'rgb(25, 48, 143)'
     }
     if (aboutScrollPercentage > -100 && aboutScrollPercentage < 100) {
         body.style.backgroundColor = aboutScrollPercentage < 0 ? `rgb(${increaseColor(aboutScrollPercentage)})` : `rgb(${decreaseColor(aboutScrollPercentage)})`
@@ -164,14 +264,15 @@ window.addEventListener('scroll', () => {
     if (projectsScrollPercentageUp > -100 && projectsScrollPercentageUp < 100) {
         body.style.backgroundColor = projectsScrollPercentageUp < 0 && `rgb(${increaseColor(projectsScrollPercentageUp)})`
     }
-    if (projectsScrollPercentageUp > 0 && projectsScrollPercentageDown < 100) {
-        body.style.backgroundColor = projectsScrollPercentageDown < 100 && `rgb(${decreaseColor(projectsScrollPercentageDown)})`
+    if (projectsScrollPercentageUp > -1 && projectsScrollPercentageDown < 100) {
+        body.style.backgroundColor = projectsScrollPercentageDown < 101 && `rgb(${decreaseColor(projectsScrollPercentageDown)})`
     }
     if (outroScrollPercentage > -100 && outroScrollPercentage < 100) {
         body.style.backgroundColor = outroScrollPercentage < 0 ? `rgb(${increaseColor(outroScrollPercentage)})` : `rgb(${decreaseColor(outroScrollPercentage)})`
     }
-    
-})
+}
+
+window.addEventListener('scroll', calculateBgColour)
 
 // Tabs Section
 const tabsText = [

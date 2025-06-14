@@ -1,3 +1,5 @@
+@import '../base/variables.scss';
+
 :root {
     --scroll: 0
 }
@@ -15,6 +17,12 @@
 
 html {
     scroll-behavior: smooth;
+    color: $color-dark-blue;
+
+    &.dark {
+        background-color: $color-mid-dark-blue;
+        color: $color-cta;
+    }
 }
 
 body {

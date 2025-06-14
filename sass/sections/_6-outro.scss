@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     vertical-align: middle;
-    color: $color-dark-blue;
     text-align: center;
     overflow: hidden;
 
@@ -41,6 +40,10 @@
                 height: 140px;
                 width: 141px;
             }
+
+            &--dark {
+                background-image: url(../../images/cat-1-dark.png);
+            }
         }
         &--2 {
             background-image: url(../../images/cat-2.png);
@@ -54,6 +57,10 @@
             @media (min-width: 768px) {
                 height: 152px;
                 width: 145px;
+            }
+
+            &--dark {
+                background-image: url(../../images/cat-2-dark.png);
             }
         }
         &--3 {
@@ -69,6 +76,10 @@
                 height: 154px;
                 width: 143px;
             }
+
+            &--dark {
+                background-image: url(../../images/cat-3-dark.png);
+            }
         }
         &--4 {
             background-image: url(../../images/cat-4.png);
@@ -82,6 +93,10 @@
             @media (min-width: 768px) {
                 height: 154px;
                 width: 140px;
+            }
+
+            &--dark {
+                background-image: url(../../images/cat-4-dark.png);
             }
         }
     }
@@ -123,6 +138,16 @@
             @include primaryText;
             padding: 18px 25px;
         }
+
+        &--dark {
+            background-color: transparent;
+            color: $color-cta;
+            border-color: $color-cta;
+
+            &:hover {
+                background-color: rgba($color-cta, .2);
+            }
+        }
     }
 
     &__cat {
@@ -137,11 +162,26 @@
             width: 346px;
             height: 391px;
         }
+
+        &--dark {
+            background-image: url('../images/outro-2-cat-dark.png');
+        }
     }
 }
 
 .outro-2__wrapper:hover  .outro-2__cat:not(:hover){
     background-image: url('../images/outro-2-cat-hover.png');
+    width: 276px;
+    height: 312px;
+
+    @media (min-width: 768px) {
+        width: 346px;
+        height: 391px;
+    }
+}
+
+.outro-2__wrapper:hover  .outro-2__cat--dark:not(:hover){
+    background-image: url('../images/outro-2-cat-hover-dark.png');
     width: 276px;
     height: 312px;
 
