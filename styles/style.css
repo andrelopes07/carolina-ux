@@ -168,13 +168,13 @@ body {
   line-height: 26px;
   list-style: none;
   display: flex;
-  margin: 0 0 40px;
+  margin: 0 0 20px;
   overflow: scroll;
   scrollbar-width: none;
 }
 @media (min-width: 768px) {
   .about__tabs {
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
   }
 }
 .about__tabs li:nth-child(2) {
@@ -457,6 +457,7 @@ body {
   }
 }
 .projects__lastUpdate {
+  display: none;
   align-content: center;
   color: rgba(153, 153, 153, 0.6);
   font-family: "RecoletaAlt", serif;
@@ -564,7 +565,7 @@ body {
 }
 .outro-1__cat--1 {
   background-image: url(../../images/cat-1.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 104px;
   width: 105px;
@@ -582,7 +583,7 @@ body {
 }
 .outro-1__cat--2 {
   background-image: url(../../images/cat-2.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 113px;
   width: 107px;
@@ -600,7 +601,7 @@ body {
 }
 .outro-1__cat--3 {
   background-image: url(../../images/cat-3.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 107px;
   width: 95px;
@@ -618,7 +619,7 @@ body {
 }
 .outro-1__cat--4 {
   background-image: url(../../images/cat-4.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 114px;
   width: 106px;
@@ -768,8 +769,8 @@ body {
 
 .colourScheme {
   position: fixed;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   bottom: 40px;
   left: 26px;
   z-index: 1000;
